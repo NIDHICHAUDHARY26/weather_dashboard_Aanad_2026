@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Weather Dashboard</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="title">
+      <span class="logo">⛅</span>
+      <div><h1>WEATHER DASHBOARD</h1><p>Explore Weather Trends and Key Insights</p></div>
+    </div>
+    <div class="period"><span>📅</span><div>Selected Period<br><b id="period">-</b></div></div>
+    <button id="auto" class="auto">⏸ Pause</button>
+  </header>
+
+  <section class="filters">
+    <label>Year <select id="f-year"></select></label>
+    <label>Month <select id="f-month"></select></label>
+    <label>Location <select id="f-location"></select></label>
+    <label>Weather Condition <select id="f-condition"></select></label>
+    <label>Season <select id="f-season"></select></label>
+  </section>
+
+  <section class="kpis">
+    <div class="kpi"><i class="ic red">🌡️</i><div><span>Average Temperature</span><b id="k-avg">-</b></div></div>
+    <div class="kpi"><i class="ic red">🔺</i><div><span>Maximum Temperature</span><b id="k-max">-</b></div></div>
+    <div class="kpi"><i class="ic blue">🔻</i><div><span>Minimum Temperature</span><b id="k-min">-</b></div></div>
+    <div class="kpi"><i class="ic blue">💧</i><div><span>Average Humidity</span><b id="k-hum">-</b></div></div>
+    <div class="kpi"><i class="ic blue">🌧️</i><div><span>Total Rainfall</span><b id="k-rain">-</b></div></div>
+    <div class="kpi"><i class="ic blue">💨</i><div><span>Average Wind Speed</span><b id="k-wind">-</b></div></div>
+  </section>
+
+  <section class="grid">
+    <div class="card c5"><h3>Temperature Trend</h3><div class="cw"><canvas id="ch-temp"></canvas></div></div>
+    <div class="card c4"><h3>Rainfall by Month</h3><div class="cw"><canvas id="ch-rain"></canvas></div></div>
+    <div class="card c3"><h3>Weather Condition Distribution</h3><div class="cw"><canvas id="ch-cond"></canvas></div></div>
+    <div class="card c4"><h3>Humidity vs Temperature</h3><div class="cw"><canvas id="ch-scatter"></canvas></div></div>
+    <div class="card c5"><h3>Average Wind Speed by Month</h3><div class="cw"><canvas id="ch-wind"></canvas></div></div>
+    <div class="card c3"><h3>Wind Direction Distribution</h3><div class="cw"><canvas id="ch-dir"></canvas></div></div>
+  </section>
+  <p id="msg" class="msg"></p>
+</div>
+<script src="data/sample-data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
